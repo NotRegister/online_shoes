@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:sizer/sizer.dart';
 
 class IntroPage extends StatelessWidget {
   @override
@@ -27,7 +28,7 @@ class IntroPage extends StatelessWidget {
                     textAlign: TextAlign.center,
                     style: GoogleFonts.lato(
                       textStyle: TextStyle(
-                        fontSize: 30,
+                        fontSize: 30.sp,
                         fontWeight: FontWeight.w500,
                         color: Colors.white,
                       ),
@@ -43,7 +44,7 @@ class IntroPage extends StatelessWidget {
                       textStyle: TextStyle(
                           color: Colors.grey,
                           fontWeight: FontWeight.w400,
-                          fontSize: 14),
+                          fontSize: 14.sp),
                     ),
                   ),
                 ],
