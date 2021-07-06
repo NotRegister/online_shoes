@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:online_shoes/home_page.dart';
+import 'package:online_shoes/model/shoes.dart';
 import 'package:sizer/sizer.dart';
 
 class IntroPage extends StatelessWidget {
@@ -13,12 +15,24 @@ class IntroPage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            Expanded(
+            Flexible(
               flex: 3,
-              child: Image.asset('assets/images/converseSkate.png'),
+              child: Container(
+                padding: EdgeInsets.only(top: 4.h, bottom: 5.h),
+                child: Align(
+                  child: Container(
+                    child: Image.asset(
+                      'assets/images/converseSkate.png',
+                      /* width: 50.h,
+                      height: 53.h, */
+                    ),
+                  ),
+                ),
+              ),
             ),
             Container(
-              padding: EdgeInsets.fromLTRB(50, 10, 50, 20),
+              padding: EdgeInsets.fromLTRB(15.w, 1.h, 15.w, 1.h),
+              // padding: EdgeInsets.fromLTRB(50, 10, 50, 20),
               // height: 150,
               // color: Colors.red,
               child: Column(
@@ -28,14 +42,14 @@ class IntroPage extends StatelessWidget {
                     textAlign: TextAlign.center,
                     style: GoogleFonts.lato(
                       textStyle: TextStyle(
-                        fontSize: 30.sp,
+                        fontSize: 20.sp,
                         fontWeight: FontWeight.w500,
                         color: Colors.white,
                       ),
                     ),
                   ),
                   SizedBox(
-                    height: 20,
+                    height: 2.h,
                   ),
                   Text(
                     'find local shoes to support your daily activities',
@@ -44,36 +58,52 @@ class IntroPage extends StatelessWidget {
                       textStyle: TextStyle(
                           color: Colors.grey,
                           fontWeight: FontWeight.w400,
-                          fontSize: 14.sp),
+                          fontSize: 10.sp),
                     ),
                   ),
                 ],
               ),
             ),
-            /* SizedBox(
-              height: 30,
-            ), */
-            Container(
-              // ! Button getStarted
-              height: 80,
-              child: Padding(
-                padding: const EdgeInsets.only(left: 80, right: 80),
+            SizedBox(
+              height: 4.h,
+              child: Text(
+                'Width: ${screenSize.width.toStringAsFixed(0)} | height: ${screenSize.height.toStringAsFixed(0)}',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 13,
+                  color: Colors.white.withOpacity(0.2),
+                ),
+              ),
+            ),
+            Align(
+              alignment: Alignment.center,
+              child: Container(
+                // ! Button getStarted
+                height: 14.w,
+                width: 55.w,
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     primary: Colors.white,
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20),
+                      borderRadius: BorderRadius.circular(25),
                     ),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => HomePage(),
+                      ),
+                    );
+                  },
                   child: Center(
                     child: Text(
                       'Get Started',
                       style: GoogleFonts.lato(
                         textStyle: TextStyle(
                           color: Colors.grey[850],
-                          fontSize: 20,
-                          fontWeight: FontWeight.w900,
+                          fontSize: 14.sp,
+                          fontWeight: FontWeight.w800,
                         ),
                       ),
                     ),
@@ -82,11 +112,7 @@ class IntroPage extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 70,
-              child: Text(
-                'Width: ${screenSize.width.toStringAsFixed(0)} | height: ${screenSize.height.toStringAsFixed(0)}',
-                style: TextStyle(color: Colors.white),
-              ),
+              height: 50,
             )
           ],
         ),

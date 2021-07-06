@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:online_shoes/collection_page.dart';
+import 'package:online_shoes/detail_screen.dart';
+import 'package:online_shoes/home_page.dart';
 import 'package:online_shoes/intro_page.dart';
 import 'package:sizer/sizer.dart';
 
@@ -13,7 +16,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return Sizer(builder: (context, orientation, deviceType) {
       return MaterialApp(
-        home: IntroPage(),
+        home: HomePage(),
       );
     });
   }
