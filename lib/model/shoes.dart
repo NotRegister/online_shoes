@@ -5,7 +5,7 @@ class ShoesBrand {
   ShoesBrand({required this.name, required this.imageURLs});
 }
 
-var ShoesBrandList = [
+var shoesBrandList = [
   ShoesBrand(
     name: 'Nike',
     imageURLs: 'assets/images/logos/nike.png',
@@ -40,7 +40,7 @@ class Shoes {
   });
 }
 
-var ShoesList = [
+var shoesList = [
   Shoes(
       brandName: 'Nike',
       name: 'Blazer Low \'77',
@@ -62,6 +62,13 @@ var ShoesList = [
       collection: 'Firm-Ground Football',
       imageURLs:
           'https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/bc0b7650-3f96-4ed4-9f28-53c9ae7399b4/mercurial-superfly-8-elite-cr7-fg-football-boot-Xg2wtF.png'),
+  Shoes(
+      brandName: 'Reebok',
+      name: 'Classic Leather Legacy Grow Shoes',
+      price: '\$ 80',
+      collection: 'Classics',
+      imageURLs:
+          'https://assets.reebok.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy,c_fill,g_auto/21dfe34b96a24a9d90a0acec01076e1b_9366/Classic_Leather_Legacy_Grow_Shoes_White_S24179_03_standard.jpg'),
   Shoes(
       brandName: 'Reebok',
       name: 'Classic Leather Legacy Grow Shoes',

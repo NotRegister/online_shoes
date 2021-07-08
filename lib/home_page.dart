@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:material_floating_search_bar/material_floating_search_bar.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:material_floating_search_bar/material_floating_search_bar.dart'; //! hapus pubspec
 import 'package:online_shoes/collection_page.dart';
 import 'package:online_shoes/detail_screen.dart';
 import 'package:online_shoes/model/shoes.dart';
+import 'package:online_shoes/widgets/brandcollection_listview_button.dart';
 import 'package:online_shoes/widgets/favorite_button.dart';
 import 'package:sizer/sizer.dart';
 
@@ -78,9 +80,9 @@ class ShoesGridCount extends StatelessWidget {
         shrinkWrap: true,
         physics: NeverScrollableScrollPhysics(),
         childAspectRatio: .65 /* itemWidth / itemHeight */,
-        // childAspectRatio: .70,
-        crossAxisCount: 2,
-        children: ShoesList.map((shoes) {
+        // crossAxisCount: 2,
+        crossAxisCount: selectedBrandShoes.length,
+        children: shoesList.map((shoes) {
           return InkWell(
             onTap: () {
               Navigator.push(context, MaterialPageRoute(builder: (context) {
@@ -249,28 +251,31 @@ class SearchBar extends StatelessWidget {
   }
 }
 
-//! belum liat
 class BrandCollection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final List<Shoes> shoes;
     return Container(
       width: 90.w,
       height: 13.h,
       // color: Colors.red.withOpacity(0.4),
-      child: ListView.builder(
+      child: ListView(
         scrollDirection: Axis.horizontal,
-        itemCount: ShoesBrandList.length,
+        children: [
+          BrandCollectionButton(),
+        ],
+      ),
+      /* ListView.builder(
+        scrollDirection: Axis.horizontal,
+        itemCount: shoesBrandList.length,
         itemBuilder: (BuildContext context, int index) {
-          final ShoesBrand brand = ShoesBrandList[index];
-          final Shoes shoes = ShoesList[index];
+          final ShoesBrand shoesBrand = shoesBrandList[index];
           return Padding(
             padding: EdgeInsets.only(right: 4.w),
             child: InkWell(
               onTap: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return CollectionsPage(
-                    shoes: shoes,
-                  );
+                  return CollectionsPage(shoesBrand: shoesBrand);
                 }));
               },
               child: Container(
@@ -291,7 +296,7 @@ class BrandCollection extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Image.asset(
-                                brand.imageURLs,
+                                shoesBrand.imageURLs,
                                 color: Colors.black,
                               ),
                             ],
@@ -301,7 +306,7 @@ class BrandCollection extends StatelessWidget {
                           height: 1.h,
                         ),
                         Text(
-                          brand.name,
+                          shoesBrand.name,
                           style: TextStyle(fontSize: 12.sp),
                         ),
                       ],
@@ -312,7 +317,7 @@ class BrandCollection extends StatelessWidget {
             ),
           );
         },
-      ),
+      ), */
     );
   }
 }
