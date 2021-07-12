@@ -5,9 +5,8 @@ import 'package:sizer/sizer.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 var selectedBrand;
-get selectedBrandShoes {
-  shoesList.where((shoes) => shoes.brandName == selectedBrand);
-}
+get selectedBrandShoes =>
+    shoesList.where((shoes) => shoes.brandName == selectedBrand);
 
 class BrandCollectionButton extends StatefulWidget {
   const BrandCollectionButton({Key? key}) : super(key: key);
@@ -21,8 +20,7 @@ class _BrandCollectionButtonState extends State<BrandCollectionButton> {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        InkWell(
-          //! Nike button
+        GestureDetector(
           onTap: () {
             setState(() {
               selectedBrand = 'Nike';

@@ -66,9 +66,14 @@ class HomePage extends StatelessWidget {
   }
 }
 
-class ShoesGridCount extends StatelessWidget {
+class ShoesGridCount extends StatefulWidget {
   const ShoesGridCount({Key? key}) : super(key: key);
 
+  @override
+  _ShoesGridCountState createState() => _ShoesGridCountState();
+}
+
+class _ShoesGridCountState extends State<ShoesGridCount> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -261,6 +266,7 @@ class BrandCollection extends StatelessWidget {
       // color: Colors.red.withOpacity(0.4),
       child: ListView(
         scrollDirection: Axis.horizontal,
+        physics: BouncingScrollPhysics(),
         children: [
           BrandCollectionButton(),
         ],

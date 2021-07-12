@@ -169,7 +169,22 @@ class DetailScreen extends StatelessWidget {
                         onPressed: () {},
                         child: Container(
                           child: Image.network(
-                            'https://shopeesgblog.com/wp-content/uploads/2019/03/512x512-logo.png',
+                            'https://logodix.com/logo/2015053.png',
+                            width: 7.h,
+                            height: 7.h,
+                          ),
+                        ),
+                      ),
+                      ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          minimumSize: Size.zero,
+                          padding: EdgeInsets.all(0),
+                          primary: Colors.white,
+                        ),
+                        onPressed: () {},
+                        child: Container(
+                          child: Image.network(
+                            'https://logodix.com/logo/2015053.png',
                             width: 7.h,
                             height: 7.h,
                           ),
